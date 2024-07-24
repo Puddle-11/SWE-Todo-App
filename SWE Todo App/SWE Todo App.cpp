@@ -7,6 +7,7 @@ int main()
 {
     instance = HelperMethods::MakeInstance();
     TodoList newList;
+
     newList.AddCard(TodoList::Card("Test", "", false));
     newList.AddCard(TodoList::Card("Test1", "", true));
     newList.AddCard(TodoList::Card("Test2", "", false));
