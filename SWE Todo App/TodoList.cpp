@@ -47,7 +47,7 @@ bool TodoList::IsValidIndex(int _index) {
 
 void TodoList::SaveList()
 {
-	std::ofstream file("file.txt");
+	std::ofstream file("list.txt");
 	if (file.is_open())
 	{
 		for (Card index : mainList)
@@ -66,7 +66,7 @@ void TodoList::SaveList()
 
 void TodoList::LoadList()
 {
-	std::ifstream file("file.txt");
+	std::ifstream file("list.txt");
 	std::string reader = "";
 
 	if (file.is_open())

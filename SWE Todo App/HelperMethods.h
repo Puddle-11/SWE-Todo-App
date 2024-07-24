@@ -11,10 +11,12 @@ public:
   
 	HelperMethods();
 	~HelperMethods();
-  void ConsoleClear();
+    void ConsoleClear();
 	static HelperMethods* MakeInstance();
 	void DisplayUI();
 	void DisplayTodoList(TodoList _list);
+	int GetUserInput();
+	void DisplayError();
 
 private:
 	static HelperMethods* instance;

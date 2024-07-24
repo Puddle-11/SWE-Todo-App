@@ -5,16 +5,23 @@
 HelperMethods* instance;
 int main()
 {
-    instance = HelperMethods::MakeInstance();
-    TodoList newList;
 
-    newList.AddCard(TodoList::Card("Test", "", false));
-    newList.AddCard(TodoList::Card("Test1", "", true));
-    newList.AddCard(TodoList::Card("Test2", "", false));
-    newList.AddCard(TodoList::Card("Test3", "", false));
+        instance = HelperMethods::MakeInstance();
+        TodoList newList;
+    while (true)
+    {
+        
+        instance->ConsoleClear();
+        instance->DisplayUI();
+        int res = instance->GetUserInput();
+        if (res == -1) {
+            instance->DisplayError();
+        }
+        else {
 
-    instance->DisplayUI();
-    instance->DisplayTodoList(newList);
-
-
+        }
+        instance->DisplayTodoList(newList);
+        newList.SaveList();
+    }
 }
+
