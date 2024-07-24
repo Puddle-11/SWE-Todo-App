@@ -1,7 +1,10 @@
 
 #include <iostream>
-
+#include "HelperMethods.h"
+HelperMethods* instance;
 int main()
 {
-    std::cout << "Hello World!\n";
+    instance = HelperMethods::MakeInstance();
+
+    instance->DisplayUI();
 }
