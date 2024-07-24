@@ -127,11 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Users\austi\Documents\FullSail\SoftwareEngineering\Brick Breaker\Console.cpp" />
     <ClCompile Include="HelperMethods.cpp" />
     <ClCompile Include="SWE Todo App.cpp" />
     <ClCompile Include="TodoList.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Users\austi\Documents\FullSail\SoftwareEngineering\Brick Breaker\Console.h" />
     <ClInclude Include="HelperMethods.h" />
     <ClInclude Include="TodoList.h" />
   </ItemGroup>
