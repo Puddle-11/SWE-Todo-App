@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
+#include <cstdlib>
 #include <vector>
+#include "TodoList.h"
 #include <Windows.h>
 
 enum ConsoleColor
@@ -23,13 +25,17 @@ enum ConsoleColor
 	White = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY,
 };
 
+
 class HelperMethods
 {
 public:
+  
 	HelperMethods();
 	~HelperMethods();
+  void ConsoleClear();
 	static HelperMethods* MakeInstance();
 	void DisplayUI();
+	void DisplayTodoList(TodoList _list);
 
 private:
 	static HelperMethods* instance;
