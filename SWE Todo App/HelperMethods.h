@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
-
+#include "TodoList.h"
 class HelperMethods
 {
 public:
@@ -9,6 +9,7 @@ public:
 	~HelperMethods();
 	static HelperMethods* MakeInstance();
 	void DisplayUI();
+	void DisplayTodoList(TodoList _list);
 
 private:
 	static HelperMethods* instance;

@@ -6,6 +6,12 @@ class TodoList
 public:
 
 	struct Card {
+		Card(std::string _newName = "", std::string _newDesc = "", bool _newChecked = false) {
+			_name = _newName;
+			_description = _newDesc;
+			_checked = _newChecked;
+		}
+
 		std::string _name = "";
 		std::string _description = "";
 		bool _checked = false;
@@ -16,7 +22,7 @@ public:
 	void SetTodoList(std::vector<Card> _input);
 	bool SetIndex(Card _input, int _index);
 	bool GetIndex(int _index, Card& _output);
-	bool AddCard(Card _input);
+	void AddCard(Card _input);
 private:
 	bool IsValidIndex(int _index);
 	std::vector < Card> mainList;
