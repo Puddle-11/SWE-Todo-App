@@ -4,14 +4,20 @@
 class TodoList
 {
 public:
+
+	struct Card {
+		std::string _name = "";
+		std::string _description = "";
+		bool _checked = false;
+	};
 	TodoList();
 	~TodoList();
-	std::vector<std::string> GetTodoList();
-	void SetTodoList(std::vector<std::string> _input);
-	bool SetIndex(std::string _input, int _index);
-	std::string GetIndex(int _index);
+	std::vector<Card> GetTodoList();
+	void SetTodoList(std::vector<Card> _input);
+	bool SetIndex(Card _input, int _index);
+	bool GetIndex(int _index, Card& _output);
 private:
 	bool IsValidIndex(int _index);
-	std::vector < std::string> mainList;
+	std::vector < Card> mainList;
 };
 

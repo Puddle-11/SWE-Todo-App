@@ -7,22 +7,23 @@ TodoList::~TodoList() {
 
 }
 
-std::vector<std::string> TodoList::GetTodoList() {
+std::vector<TodoList::Card> TodoList::GetTodoList() {
 	return mainList;
 }
-void TodoList::SetTodoList(std::vector<std::string> _input) {
+void TodoList::SetTodoList(std::vector<Card> _input) {
 	mainList = _input;
 }
 
-bool TodoList::SetIndex(std::string _input, int _index) {
+bool TodoList::SetIndex(Card _input, int _index) {
 	if (!IsValidIndex(_index)) return;
 
 	mainList[_index] = _input;
 }
-std::string TodoList::GetIndex(int _index) {
-	if (!IsValidIndex(_index)) return "";
+bool TodoList::GetIndex(int _index, Card& _output) {
+	if (!IsValidIndex(_index)) return false;
 
-	return mainList[_index];
+	return false;
+	_output = mainList[_index];
 }
 bool TodoList::IsValidIndex(int _index) {
 
