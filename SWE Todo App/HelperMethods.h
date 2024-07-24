@@ -40,6 +40,9 @@ public:
 
 	int GetUserInput();
 	void DisplayError();
+	void DisplayAddCard(TodoList* _list);
+	void DisplayRemoveCard(TodoList* _list);
+
 	int DisplayIndexSelection(std::vector<TodoList::Card> _inputVec);
 
 private:

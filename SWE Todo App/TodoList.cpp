@@ -34,6 +34,9 @@ bool TodoList::GetIndex(int _index, Card& _output) {
 void TodoList::AddCard(Card _input) {
 	mainList.push_back(_input);
 }
+void TodoList::RemoveCard(int _index) {
+	mainList.erase(mainList.begin() + _index);
+}
 void TodoList::ClearMainList() {
 	mainList.clear();
 }

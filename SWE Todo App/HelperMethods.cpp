@@ -11,12 +11,37 @@ void HelperMethods::DisplayError() {
 	std::cout << "ERROR: Invalid input.\n";
 	std::system("pause");
 }
+void HelperMethods::DisplayAddCard(TodoList* _list) {
+	ConsoleClear();
+
+	std::cout << "Enter the name of your Card\n"
+		<< "--------------------------\n\n";
+	std::string cardName;
+	std::cin >> cardName;
+	_list->AddCard(TodoList::Card(cardName));
+}
+void HelperMethods::DisplayRemoveCard(TodoList* _list) {
+	ConsoleClear();
+
+	std::cout << "Enter the Index of the card to remove\n"
+		<< "--------------------------\n\n";
+	int index = DisplayIndexSelection(_list->GetTodoList());
+	if (_list->IsValidIndex(index-1)) {
+		_list->RemoveCard(index-1);
+	}
+	else {
+		DisplayError();
+	}
+}
+
 int HelperMethods::DisplayIndexSelection(std::vector<TodoList::Card> _inputVec) {
+	ConsoleClear();
+
 	std::cout << "Please select an index\n"
 		<< "--------------------------\n\n";
 	DisplayTodoList(_inputVec);
 	std::cout << "\n";
-	HelperMethods::GetUserInput();
+	return HelperMethods::GetUserInput();
 }
 
 int HelperMethods::GetUserInput() {

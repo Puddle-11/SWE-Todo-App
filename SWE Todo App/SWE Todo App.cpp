@@ -13,15 +13,16 @@ int main()
         
         instance->ConsoleClear();
         instance->DisplayUI();
+        instance->DisplayTodoList(newList);
         int res = instance->GetUserInput();
         int userIndexSel = 0;
         switch (res)
         {
         case 1:
-            userIndexSel =instance->DisplayIndexSelection(newList.GetTodoList());
+            instance->DisplayAddCard(&newList);
             break;
         case 2:
-            userIndexSel = instance->DisplayIndexSelection(newList.GetTodoList());
+            instance->DisplayRemoveCard(&newList);
 
             break;
         case 3:

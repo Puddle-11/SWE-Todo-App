@@ -30,9 +30,10 @@ public:
 	void ClearMainList();
 	void SaveList();
 	void LoadList();
+	void RemoveCard(int _index);
+	bool IsValidIndex(int _index);
 
 private:
-	bool IsValidIndex(int _index);
 	std::vector < Card> mainList;
 };
 
