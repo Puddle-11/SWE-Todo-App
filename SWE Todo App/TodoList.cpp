@@ -7,6 +7,7 @@ TodoList::~TodoList() {
 
 }
 
+
 std::vector<TodoList::Card> TodoList::GetTodoList() {
 	return mainList;
 }
@@ -14,16 +15,23 @@ void TodoList::SetTodoList(std::vector<Card> _input) {
 	mainList = _input;
 }
 
-void TodoList::SetIndex(Card _input, int _index) {
-	if (!IsValidIndex(_index)) return;
+
+bool TodoList::SetIndex(Card _input, int _index) {
+	if (!IsValidIndex(_index)) return false;
 
 	mainList[_index] = _input;
+	return true;
+
 }
 bool TodoList::GetIndex(int _index, Card& _output) {
 	if (!IsValidIndex(_index)) return false;
 
 	return false;
 	_output = mainList[_index];
+}
+
+void TodoList::AddCard(Card _input) {
+	mainList.push_back(_input);
 }
 bool TodoList::IsValidIndex(int _index) {
 
@@ -76,3 +84,4 @@ void TodoList::LoadList()
 		file.close();
 	}
 }
+

@@ -9,6 +9,13 @@ class TodoList
 public:
 
 	struct Card {
+
+		Card(std::string _newName = "", std::string _newDesc = "", bool _newChecked = false) {
+			_name = _newName;
+			_description = _newDesc;
+			_checked = _newChecked;
+		}
+
 		std::string _name = "";
 		std::string _description = "";
 		bool _checked = false;
