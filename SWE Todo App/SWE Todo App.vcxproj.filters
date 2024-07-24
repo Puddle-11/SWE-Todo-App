@@ -18,5 +18,13 @@
     <ClCompile Include="SWE Todo App.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TodoList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TodoList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
