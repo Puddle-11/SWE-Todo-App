@@ -39,6 +39,7 @@ public:
 	void DisplayTodoList(std::vector<TodoList::Card> _list);
 
 	int GetUserInput();
+	void DisplayCheckCard(TodoList* _list);
 	void DisplayError();
 	void DisplayAddCard(TodoList* _list);
 	void DisplayRemoveCard(TodoList* _list);

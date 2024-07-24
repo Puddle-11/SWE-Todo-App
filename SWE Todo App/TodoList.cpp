@@ -1,7 +1,7 @@
 #include "TodoList.h"
 
 TodoList::TodoList() {
-
+	LoadList();
 }
 TodoList::~TodoList() {
 
@@ -34,8 +34,11 @@ bool TodoList::GetIndex(int _index, Card& _output) {
 void TodoList::AddCard(Card _input) {
 	mainList.push_back(_input);
 }
-void TodoList::RemoveCard(int _index) {
+bool TodoList::RemoveCard(int _index) {
+	if (_index < 0 || _index >= mainList.size()) return false;
+
 	mainList.erase(mainList.begin() + _index);
+	return true;
 }
 void TodoList::ClearMainList() {
 	mainList.clear();
@@ -46,6 +49,12 @@ bool TodoList::IsValidIndex(int _index) {
 	if (_index < 0 || _index >= mainList.size()) return false;
 	return true;
 
+}
+bool TodoList::CheckCard(int _index) {
+	if (_index < 0 || _index >= mainList.size()) return false;
+
+	mainList[_index]._checked = mainList[_index]._checked ? false : true;
+		return true;
 }
 
 void TodoList::SaveList()
@@ -88,7 +97,7 @@ void TodoList::LoadList()
 
 			mainList.push_back(newCard);
 		}
-
+		mainList.pop_back();
 		file.close();
 	}
 }

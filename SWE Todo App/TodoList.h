@@ -28,9 +28,10 @@ public:
 	bool GetIndex(int _index, Card& _output);
 	void AddCard(Card _input);
 	void ClearMainList();
+	bool CheckCard(int _index);
 	void SaveList();
 	void LoadList();
-	void RemoveCard(int _index);
+	bool RemoveCard(int _index);
 	bool IsValidIndex(int _index);
 
 private:

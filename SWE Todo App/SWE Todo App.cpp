@@ -26,24 +26,16 @@ int main()
 
             break;
         case 3:
-            userIndexSel = instance->DisplayIndexSelection(newList.GetTodoList());
+            instance->DisplayCheckCard(&newList);
 
             break;
         case 4:
-            userIndexSel = instance->DisplayIndexSelection(newList.GetTodoList());
-
+            newList.ClearMainList();
             break;
-        case 5:
-            break;
-        case 6:
-
-            break;
-        case -1:
+        default:
             instance->DisplayError();
             break;
 
-        default:
-            break;
         }
        
         instance->DisplayTodoList(newList);

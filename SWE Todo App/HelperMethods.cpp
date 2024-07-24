@@ -20,18 +20,29 @@ void HelperMethods::DisplayAddCard(TodoList* _list) {
 	std::cin >> cardName;
 	_list->AddCard(TodoList::Card(cardName));
 }
+void HelperMethods::DisplayCheckCard(TodoList* _list) {
+	ConsoleClear();
+
+	std::cout << "Enter the Index of the card to check or uncheck\n"
+		<< "--------------------------\n\n";
+	int index = DisplayIndexSelection(_list->GetTodoList());
+	if (!_list->CheckCard(index - 1)) {
+		DisplayError();
+	}
+
+
+
+}
 void HelperMethods::DisplayRemoveCard(TodoList* _list) {
 	ConsoleClear();
 
 	std::cout << "Enter the Index of the card to remove\n"
 		<< "--------------------------\n\n";
 	int index = DisplayIndexSelection(_list->GetTodoList());
-	if (_list->IsValidIndex(index-1)) {
-		_list->RemoveCard(index-1);
-	}
-	else {
+	if (!_list->RemoveCard(index - 1)) {
 		DisplayError();
 	}
+
 }
 
 int HelperMethods::DisplayIndexSelection(std::vector<TodoList::Card> _inputVec) {
@@ -51,7 +62,7 @@ int HelperMethods::GetUserInput() {
 
 	std::string temp(1,userinput[0]);
 		int filter = std::stoi(temp);
-		if (filter <= 6 && filter > 0) return filter;
+		if (filter <= 5 && filter > 0) return filter;
 	}
 		return -1;
 }
@@ -64,9 +75,7 @@ void HelperMethods::DisplayUI() {
 		<< "Press 1: To Add to the list\n"
 		<< "Press 2: To Remove from the list\n"
 		<< "Press 3: To Check or Uncheck an item\n"
-		<< "Press 4: To Save the list (Saved lists can be found in the project folder under the name 'list.txt')\n"
-		<< "Press 5: To Import a list\n"
-		<< "Press 6: To Clear the list\n"
+		<< "Press 4: To Clear the list\n"
 		<< "-------------------------------------------------" << "\n\n";
 }
  HelperMethods* HelperMethods::MakeInstance() {
