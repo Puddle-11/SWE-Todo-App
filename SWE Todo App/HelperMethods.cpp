@@ -1,5 +1,9 @@
 #include "HelperMethods.h"
 
+void ConsoleClear()
+{
+	std::system("cls");
+}
 
 void HelperMethods::DisplayUI() {
 	std::cout << std::endl;
