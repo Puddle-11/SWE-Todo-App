@@ -14,12 +14,37 @@ int main()
         instance->ConsoleClear();
         instance->DisplayUI();
         int res = instance->GetUserInput();
-        if (res == -1) {
-            instance->DisplayError();
-        }
-        else {
+        int userIndexSel = 0;
+        switch (res)
+        {
+        case 1:
+            userIndexSel =instance->DisplayIndexSelection(newList.GetTodoList());
+            break;
+        case 2:
+            userIndexSel = instance->DisplayIndexSelection(newList.GetTodoList());
 
+            break;
+        case 3:
+            userIndexSel = instance->DisplayIndexSelection(newList.GetTodoList());
+
+            break;
+        case 4:
+            userIndexSel = instance->DisplayIndexSelection(newList.GetTodoList());
+
+            break;
+        case 5:
+            break;
+        case 6:
+
+            break;
+        case -1:
+            instance->DisplayError();
+            break;
+
+        default:
+            break;
         }
+       
         instance->DisplayTodoList(newList);
         newList.SaveList();
     }

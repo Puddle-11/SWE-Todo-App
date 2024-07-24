@@ -36,8 +36,11 @@ public:
 	static HelperMethods* MakeInstance();
 	void DisplayUI();
 	void DisplayTodoList(TodoList _list);
+	void DisplayTodoList(std::vector<TodoList::Card> _list);
+
 	int GetUserInput();
 	void DisplayError();
+	int DisplayIndexSelection(std::vector<TodoList::Card> _inputVec);
 
 private:
 	static HelperMethods* instance;
