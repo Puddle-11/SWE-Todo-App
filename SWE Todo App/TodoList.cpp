@@ -7,6 +7,7 @@ TodoList::~TodoList() {
 
 }
 
+
 std::vector<TodoList::Card> TodoList::GetTodoList() {
 	return mainList;
 }
@@ -33,3 +34,4 @@ bool TodoList::IsValidIndex(int _index) {
 	if (_index < 0 || _index >= mainList.size()) return false;
 	return true;
 }
+

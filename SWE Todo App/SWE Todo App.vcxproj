@@ -127,10 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="HelperMethods.cpp" />
     <ClCompile Include="SWE Todo App.cpp" />
     <ClCompile Include="TodoList.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="HelperMethods.h" />
     <ClInclude Include="TodoList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
