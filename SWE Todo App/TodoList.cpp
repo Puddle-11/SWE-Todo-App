@@ -25,9 +25,11 @@ bool TodoList::GetIndex(int _index, Card& _output) {
 	return false;
 	_output = mainList[_index];
 }
+bool TodoList::AddCard(Card _input) {
+	mainList.push_back(_input);
+}
 bool TodoList::IsValidIndex(int _index) {
 
 	if (_index < 0 || _index >= mainList.size()) return false;
 	return true;
-
 }
