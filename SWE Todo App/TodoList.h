@@ -8,6 +8,6 @@ public:
 	~TodoList();
 
 private:
-
+	std::vector < std::string> mainList;
 };
 
