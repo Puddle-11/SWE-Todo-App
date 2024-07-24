@@ -16,6 +16,7 @@ void TodoList::SetTodoList(std::vector<Card> _input) {
 }
 
 
+
 bool TodoList::SetIndex(Card _input, int _index) {
 	if (!IsValidIndex(_index)) return false;
 
@@ -33,6 +34,10 @@ bool TodoList::GetIndex(int _index, Card& _output) {
 void TodoList::AddCard(Card _input) {
 	mainList.push_back(_input);
 }
+void TodoList::ClearMainList() {
+	mainList.clear();
+}
+
 bool TodoList::IsValidIndex(int _index) {
 
 	if (_index < 0 || _index >= mainList.size()) return false;

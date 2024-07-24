@@ -27,6 +27,7 @@ public:
 	bool SetIndex(Card _input, int _index);
 	bool GetIndex(int _index, Card& _output);
 	void AddCard(Card _input);
+	void ClearMainList();
 	void SaveList();
 	void LoadList();
 
